@@ -8,11 +8,14 @@
 
 [sub_resource type="Resource" id="Resource_oqwcg"]
 script = ExtResource("3_10v3s")
+position = Vector3(0, 0, 0)
+tileIndex = 0
 metadata/_custom_type_script = "uid://dmv46d37e2pvo"
 
 [sub_resource type="Resource" id="Resource_a6664"]
 script = ExtResource("3_10v3s")
 position = Vector3(2, 0, 0)
+tileIndex = 0
 metadata/_custom_type_script = "uid://dmv46d37e2pvo"
 
 [sub_resource type="Resource" id="Resource_10v3s"]
@@ -29,7 +32,7 @@ metadata/_custom_type_script = "uid://dqcwjv405vh4f"
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.968283, 0.24985614, 0, -0.24985614, 0.968283, 0, 3.0172753, 5.4853134)
+transform = Transform3D(1, 0, 0, 0, 0.968283, 0.249856, 0, -0.249856, 0.968283, 0, 3.01728, 5.48531)
 
 [node name="TilemapRendererWZ" type="Node3D" parent="."]
 script = ExtResource("1_oqwcg")

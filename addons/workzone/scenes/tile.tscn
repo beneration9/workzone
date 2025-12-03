@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsp24qnme25gx"]
+[gd_scene load_steps=6 format=3 uid="uid://dsp24qnme25gx"]
 
 [ext_resource type="PackedScene" uid="uid://darspfbd5kbki" path="res://models/tile.glb" id="1_jjh63"]
 [ext_resource type="Shader" uid="uid://elpnxpfuk5ip" path="res://ursc/spatial/standard/standard_opaque.gdshader" id="2_qplqd"]
@@ -18,8 +18,18 @@ shader_parameter/uv_scroll_speed = Vector2(0, 0)
 shader_parameter/cull_distance_override = 0.0
 shader_parameter/convert_vertex_colors = false
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjh63"]
+size = Vector3(2, 2, 2.07663)
+
 [node name="tile" instance=ExtResource("1_jjh63")]
 
 [node name="Cube" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13618231, -0.28943944, 0.24053526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136182, -0.289439, 0.240535)
 surface_material_override/0 = SubResource("ShaderMaterial_y64mb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14462, -0.406082, -0.0208145)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.177002, 0.255508)
+shape = SubResource("BoxShape3D_jjh63")
