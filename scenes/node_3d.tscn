@@ -1,0 +1,37 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgl3o87mul6xx"]
+
+[ext_resource type="Script" uid="uid://bcsb42bcfqvjg" path="res://addons/workzone/nodes/tilemapRendererWz.gd" id="1_oqwcg"]
+[ext_resource type="Script" uid="uid://dqcwjv405vh4f" path="res://addons/workzone/resources/tilemapWz.gd" id="2_a6664"]
+[ext_resource type="Script" uid="uid://dmv46d37e2pvo" path="res://addons/workzone/resources/tileWz.gd" id="3_10v3s"]
+[ext_resource type="Script" uid="uid://oupscm1dqrsr" path="res://addons/workzone/resources/tilesetWz.gd" id="4_cptob"]
+[ext_resource type="Texture2D" uid="uid://c72oeiwel6dmm" path="res://models/tile_Cube.png" id="5_b2yaj"]
+
+[sub_resource type="Resource" id="Resource_oqwcg"]
+script = ExtResource("3_10v3s")
+metadata/_custom_type_script = "uid://dmv46d37e2pvo"
+
+[sub_resource type="Resource" id="Resource_a6664"]
+script = ExtResource("3_10v3s")
+position = Vector3(2, 0, 0)
+metadata/_custom_type_script = "uid://dmv46d37e2pvo"
+
+[sub_resource type="Resource" id="Resource_10v3s"]
+script = ExtResource("4_cptob")
+tiles = Array[Texture2D]([ExtResource("5_b2yaj")])
+metadata/_custom_type_script = "uid://oupscm1dqrsr"
+
+[sub_resource type="Resource" id="Resource_cptob"]
+script = ExtResource("2_a6664")
+tileset = SubResource("Resource_10v3s")
+tiles = Array[ExtResource("3_10v3s")]([SubResource("Resource_oqwcg"), SubResource("Resource_a6664")])
+metadata/_custom_type_script = "uid://dqcwjv405vh4f"
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.968283, 0.24985614, 0, -0.24985614, 0.968283, 0, 3.0172753, 5.4853134)
+
+[node name="TilemapRendererWZ" type="Node3D" parent="."]
+script = ExtResource("1_oqwcg")
+tilemap = SubResource("Resource_cptob")
+metadata/_custom_type_script = "uid://bcsb42bcfqvjg"

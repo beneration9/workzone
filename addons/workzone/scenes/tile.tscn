@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsp24qnme25gx"]
+
+[ext_resource type="PackedScene" uid="uid://darspfbd5kbki" path="res://models/tile.glb" id="1_jjh63"]
+[ext_resource type="Shader" uid="uid://elpnxpfuk5ip" path="res://ursc/spatial/standard/standard_opaque.gdshader" id="2_qplqd"]
+[ext_resource type="Texture2D" uid="uid://c72oeiwel6dmm" path="res://models/tile_Cube.png" id="3_f3siw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y64mb"]
+render_priority = 0
+shader = ExtResource("2_qplqd")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_f3siw")
+shader_parameter/albedo_texture_as_primary_color = true
+shader_parameter/mix_factor = 1.0
+shader_parameter/texture_lod_halve_distance_override = 0.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_scroll_speed = Vector2(0, 0)
+shader_parameter/cull_distance_override = 0.0
+shader_parameter/convert_vertex_colors = false
+
+[node name="tile" instance=ExtResource("1_jjh63")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13618231, -0.28943944, 0.24053526)
+surface_material_override/0 = SubResource("ShaderMaterial_y64mb")
