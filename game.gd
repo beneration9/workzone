@@ -1,8 +1,9 @@
 extends Node
 
-
+var res : Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	res = get_viewport().size
 	DisplayServer.window_set_size(Vector2i(960, 720))
 	pass # Replace with function body.
 

@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Work Zone"
 run/main_scene="uid://bgl3o87mul6xx"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -64,7 +66,7 @@ x={
 
 [rendering]
 
-renderer/rendering_method="forward_plus"
+textures/canvas_textures/default_texture_filter=0
 
 [shader_globals]
 

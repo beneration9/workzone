@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Script" uid="uid://bgte2ikjc57ty" path="res://addons/workzone/nodes/playerWz.gd" id="1_dqkch"]
+[ext_resource type="Shader" uid="uid://c7ijmxnirl1p3" path="res://ursc/spatial/sprite/sprite_unshaded.gdshader" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://xqifva2utgex" path="res://sprites/player/guardian.png" id="3_tuyoq"]
+[ext_resource type="SpriteFrames" uid="uid://cui6qtylhohqe" path="res://resources/spriteframes/4dirOeptos.tres" id="4_fjrip"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smehm"]
+render_priority = 0
+shader = ExtResource("2_qlg0r")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_tuyoq")
+shader_parameter/alpha_scissor = 0.1
+shader_parameter/texture_lod_halve_distance_override = 0.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_scroll_speed = Vector2(0, 0)
+shader_parameter/billboard_mode = 1
+shader_parameter/use_transform_scale = true
+shader_parameter/cull_distance_override = 0.0
+shader_parameter/convert_vertex_colors = false
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ur7pv"]
+radius = 0.17236328
+height = 0.38659668
+
+[node name="PlayerWZ" type="CharacterBody3D" node_paths=PackedStringArray("sprite")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("1_dqkch")
+sprite = NodePath("AnimatedSprite3D")
+metadata/_custom_type_script = "uid://bgte2ikjc57ty"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+material_override = SubResource("ShaderMaterial_smehm")
+sprite_frames = ExtResource("4_fjrip")
+animation = &"idleDown"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10345459, 0)
+shape = SubResource("CapsuleShape3D_ur7pv")
