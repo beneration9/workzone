@@ -33,6 +33,9 @@ func _process(delta: float) -> void:
 			
 			if position.z - cam3d.position.z < -7:
 				cam3d.position.z -= 0.05
+			
+			if position.z - cam3d.position.z > -4:
+				cam3d.position.z += 0.05		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
