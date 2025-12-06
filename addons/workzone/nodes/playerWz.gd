@@ -64,8 +64,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * SPEED
 		state = "walk"
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, 0.3)
+		velocity.z = move_toward(velocity.z, 0, 0.3)
 		state = "idle"
 
 	if sheet == SheetType.TWODIR:
